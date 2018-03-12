@@ -14,7 +14,7 @@ class SearchUserComponent extends React.Component {
     handleKeyPress = ev => {
         const username = this.state.username;
 
-        if (ev.key === "Enter") {
+        if (ev.key === "Enter" && username !== "") {
             ev.preventDefault();
             this.props.history.push(`/repositories/${username}`);
         }
@@ -22,9 +22,10 @@ class SearchUserComponent extends React.Component {
 
     handleClick = ev => {
         const username = this.state.username;
-
-        ev.preventDefault();
-        this.props.history.push(`/repositories/${username}`);
+        if (username !== "") {
+            ev.preventDefault();
+            this.props.history.push(`/repositories/${username}`);
+        }
     };
 
     render() {
