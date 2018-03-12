@@ -35,7 +35,8 @@ class SearchUserComponent extends React.Component {
             <Fragment>
                 <Paper>
                     <TextField
-                        hintText="Username"
+                        floatingLabelText={"Username"}
+                        hintText="Enter a Github username"
                         value={username}
                         onChange={this.handleChange}
                         onKeyPress={this.handleKeyPress}

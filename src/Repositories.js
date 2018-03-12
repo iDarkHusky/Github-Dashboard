@@ -36,7 +36,7 @@ class RepositoriesComponent extends React.Component {
         const username = this.props.match.params.username;
         try {
             const user = await fetch(
-                `https://api.github.com/users/${username}`
+                `https://api.github.com/users/${username}?access_token=${TOKEN}`
             );
             const userData = await user.json();
 
